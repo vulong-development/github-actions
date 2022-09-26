@@ -1,0 +1,28 @@
+{
+  "name": "github-actions",
+  "version": "1.0.0",
+  "description": "GitHub actions, tests, CI/DI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vulong-development/GitHub-actions.git"
+  },
+  "keywords": [
+    "GitHub",
+    "tests",
+    "GitHub",
+    "action"
+  ],
+  "author": "Vulong Development",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vulong-development/GitHub-actions/issues"
+  },
+  "homepage": "https://github.com/Vulong-development/GitHub-actions#readme",
+  "devDependencies": {
+    "htmlhint": "^1.1.4"
+  }
+}
