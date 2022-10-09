@@ -1,4 +1,11 @@
 # GitHub-actions
+
 Github actions templates
 
-- htmlhint
+### Тесты
+
+- валидация html
+
+- валидация css
+
+- валидация markdown
