@@ -4,7 +4,7 @@ Github actions templates
 
 ### Тесты
 
-- валидация html
+- валидация html с использованием htmlhint
 
 - валидация css
 
