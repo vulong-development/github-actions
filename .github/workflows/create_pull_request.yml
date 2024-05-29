@@ -22,5 +22,5 @@ jobs:
           source_branch: development 
           pr_title: "feat: PLACEHOLDER TITLE"
           pr_body: 'Please pull these awesome changes in!'
-          pr_reviewer: "kudgar"
+          pr_reviewer: 'kudgar'
           pr_label: 'automated-pr'
