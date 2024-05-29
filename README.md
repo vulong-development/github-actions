@@ -11,3 +11,5 @@ Github actions templates
 - валидация markdown
 
 - автоматическое создание PR
+
+- автоматическое изменение Issue
