@@ -1,0 +1,25 @@
+name: Create Pull Request
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v3
+        with:
+          ref: 'master'
+      
+      - name: Create Pull Request
+        uses: repo-sync/pull-request@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_branch: master # Укажите название ветки, куда должен быть создан PR
+          source_branch: development # Укажите название вашей текущей ветки, обычно это будет 'master'
+          pr_title: 'New Pull Request from development'
+          pr_body: 'Please pull these awesome changes in!'
+          pr_label: 'automated-pr'
