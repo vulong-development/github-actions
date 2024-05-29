@@ -9,3 +9,5 @@ Github actions templates
 - валидация css
 
 - валидация markdown
+
+- автоматическое создание PR
