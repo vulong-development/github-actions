@@ -1,0 +1,42 @@
+name: Issue Branch and Label
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create branch from issue title
+        uses: peter-evans/create-or-update-comment@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Создание ветки для Issue.
+          reactions: eyes
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create new branch from issue title
+        run: |
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          BRANCH_NAME=$(echo $ISSUE_TITLE | tr " " "-")
+          git checkout -b "$BRANCH_NAME"
+          git push origin "$BRANCH_NAME"
+          
+      - name: Add 'enhancement' label to issue
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const issueNumber = ${{ github.event.issue.number }};
+            github.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              labels: ['enhancement']
+            });
