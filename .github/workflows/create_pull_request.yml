@@ -15,11 +15,11 @@ jobs:
           ref: 'master'
       
       - name: Create Pull Request
-        uses: repo-sync/pull-request@v3
+        uses: repo-sync/pull-request@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          destination_branch: master # Укажите название ветки, куда должен быть создан PR
-          source_branch: development # Укажите название вашей текущей ветки, обычно это будет 'master'
+          destination_branch: master 
+          source_branch: development 
           pr_title: 'New Pull Request from development'
           pr_body: 'Please pull these awesome changes in!'
           pr_label: 'automated-pr'
