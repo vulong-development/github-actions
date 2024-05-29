@@ -15,7 +15,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Создание ветки $(echo $ISSUE_TITLE | tr " " "-") для Issue.
+            Создана ветка  для Issue.
           reactions: eyes
 
       - name: Checkout repository
